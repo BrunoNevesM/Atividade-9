@@ -1,0 +1,69 @@
+
+using  sistema;
+
+class ContaBancaria {
+    public int NúmeroConta { get; }
+    string pública Titular {obter; definir; }
+    público duplo Saldo {obter; conjunto privado; }
+
+  
+    public ContaBancaria(int numeroConta, string titular, double depositoInicial = 0.0) {
+        NumeroConta = numeroConta;
+        Titular = titular;
+        Deposito(depositoInicial);
+    }
+
+   
+    public void Depósito(duplo valor) {
+        Saldo += valor;
+    }
+
+   
+    public void Saque(duplo valor) {
+        Saldo -= valor + 5,0; // Taxa de $5,00 para cada saque
+    }
+
+    // Método para exibir informações da conta
+    public void ExibirDados() {
+        Console.WriteLine($"Conta {NumeroConta}, Titular: {Titular}, Saldo: $ {Saldo.ToString("F2")}");
+    }
+}
+
+class Program {
+    static void Principal() {
+        Console.Write("Digite o número da conta: ");
+        int numeroConta = int.Parse(Console.ReadLine());
+
+        Console.Write("Entre o titular da conta: ");
+        string titular = Console.ReadLine();
+
+        Console.Write("Haverá depósito inicial (s/n)? ");
+        char resposta = char.Parse(Console.ReadLine());
+
+        depósito duploInicial = 0,0;
+
+        if (resposta == 's' || resposta == 'S') {
+            Console.Write("Entre o valor do depósito inicial: ");
+            depositoInicial = double.Parse(Console.ReadLine());
+        }
+
+        ContaBancaria conta = new ContaBancaria(numeroConta, titular, depositoInicial);
+
+        Console.WriteLine("\nDados da conta:");
+        conta.ExibirDados();
+
+        Console.Write("\nInsira um valor para depósito: ");
+        double valorDeposito = double.Parse(Console.ReadLine());
+        conta.Depósito(valorDepósito);
+
+        Console.WriteLine("\nDados da conta atualizada:");
+        conta.ExibirDados();
+
+        Console.Write("\nEntre um valor para saque: ");
+        double valorSaque = double.Parse(Console.ReadLine());
+        conta.Saque(valorSaque);
+
+        Console.WriteLine("\nDados da conta atualizada:");
+        conta.ExibirDados();
+    }
+}
